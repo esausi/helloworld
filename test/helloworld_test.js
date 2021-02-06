@@ -1,6 +1,5 @@
 var Browser = require('zombie')
 var assert = require('assert')
-
 var app  = require('../helloworld');
 
 describe('main page', function() {
