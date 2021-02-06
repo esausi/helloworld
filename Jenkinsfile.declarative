@@ -1,18 +1,38 @@
-#!groovy
+//The declarative pipeline is defined within a block labelled ‘pipeline’
+//whereas the scripted pipeline is defined within a ‘node’.
 
-node {
-  stage 'Checkout'
-    checkout scm
+pipeline {
+  agent any
 
-  stage 'Install devDependencies'
-    sh 'npm config set registry http://registry.npmjs.org'
-    sh 'npm install'
+  tools {nodejs "NodeJS"}
 
-  stage 'Mocha test'
-    sh './node_modules/mocha/bin/mocha'
+  stages {
 
-  stage 'Cleanup'
-    echo 'prune and cleanup'
-    sh 'npm prune'
-    sh 'rm node_modules -rf'
+    //Its duplicating this task if explicitly added in code
+    stage('Git'){
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Dependencies'){
+      steps {
+        sh 'npm install'
+      }
+    }
+
+    stage('Mocha Test'){
+      steps {
+        sh 'node --expose-internals ./node_modules/.bin/mocha exit-mocha.js test/**/*.js'
+      }
+    }
+
+    stage('Cleanup'){
+      steps {
+        echo 'prune and cleanup'
+        sh 'npm prune'
+        sh 'rm node_modules -rf'
+      }
+    }
+  }
 }
