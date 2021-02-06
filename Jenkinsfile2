@@ -1,5 +1,3 @@
-//The declarative pipeline is defined within a block labelled ‘pipeline’
-//whereas the scripted pipeline is defined within a ‘node’.
 pipeline {
   agent any
 
@@ -21,7 +19,6 @@ pipeline {
 
     stage('Mocha Test'){
       steps {
-// exit-mocha.js created to force exit mocha when finish testing
         sh 'node --expose-internals ./node_modules/.bin/mocha exit-mocha.js test/**/*.spec.js'
       }
     }
