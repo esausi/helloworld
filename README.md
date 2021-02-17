@@ -50,7 +50,9 @@ When ansible tries to install CodeDeploy Agent, script returns different value t
 **Result**: Error, crontab cron not added. Checking differences between working command executed vs command created on /etc/cron.d/ansible-pull file it seams that path to ansible-pull command is incomplete
 
 **Action 7**: Jinja templates for create crontab command corrected with absolut path to ansible-pull command
-**Result**:
+**Result**: Everything working ok.
+- Testing changes on Application repo working ok, curl http://nodeserver.caramba.ga:3000/
+- Testing changes on Playbook repo working ok, ssh -i ... ec2-user@nodeserver.caramba.ga
 
 
 ## Tips for help
