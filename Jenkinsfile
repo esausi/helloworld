@@ -6,7 +6,7 @@ node {
     checkout scm 
   
   stage 'Setup'
-    sh 'npm config set registry http://registry.npmjs.prg/'
+    sh 'npm config set registry http://registry.npmjs.org/'
     sh 'npm install'
 
   stage 'Mocha test'
