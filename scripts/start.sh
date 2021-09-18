@@ -1,2 +1,3 @@
 #!/bin/sh
-node helloworld
+#start helloworld
+/usr/bin/node /usr/local/helloworld/helloworld.js
