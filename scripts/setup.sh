@@ -1,4 +1,4 @@
 #!/bin/sh
 #start helloworld
 #/usr/bin/node /usr/local/helloworld/helloworld.js
-sudo systemctl start helloworld-daemon
+sudo systemctl daemon-reload

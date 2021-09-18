@@ -1,0 +1,8 @@
+[Unit]
+Description=helloworld nodejs app
+
+[Service]
+ExecStart=/usr/bin/node /usr/local/helloworld/helloworld.js
+
+[Install]
+WantedBy=multi-user.target

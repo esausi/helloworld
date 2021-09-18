@@ -3,11 +3,14 @@ os: linux
 files:
   - source: /helloworld.js
     destination: /usr/local/helloworld/
-  - source: /scripts/helloworld.conf
-    destination: /etc/init/
+  - source: /scripts/helloworld-daemon.service
+    destination: /etc/systemctl/system
 hooks:
   BeforeInstall:
     - location: scripts/stop.sh
+      timeout: 30
+      runas: root
+    - location: scripts/setup.sh
       timeout: 30
       runas: root
   ApplicationStart:
