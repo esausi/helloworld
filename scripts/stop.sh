@@ -1,7 +1,7 @@
 #!/bin/sh
 
 [[ -e /etc/init/helloworld.conf ]] \
-   && systemctl status helloworld | \
+   && systemctl status helloworld-daemon | \
       grep -q '^active (running)' \
    && [[ $? -eq 0 ]] \
    && stop helloworld || echo "Application not started"
