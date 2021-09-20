@@ -4,7 +4,7 @@ files:
   - source: /helloworld.js
     destination: /usr/local/helloworld/
   - source: /scripts/helloworld-daemon.service
-    destination: /etc/systemctl/system
+    destination: /etc/systemd/system
 hooks:
   BeforeInstall:
     - location: scripts/stop.sh
