@@ -61,7 +61,7 @@ Resources:
               - ':'
               - !Ref 'Tag'
           Memory: 32
-          Name: helloworld
+          Name: helloworld-aws
           PortMappings:
             - ContainerPort: 3000
     Type: AWS::ECS::TaskDefinition
