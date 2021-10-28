@@ -32,7 +32,7 @@ Resources:
             - cluster-id
       DesiredCount: 1
       LoadBalancers:
-        - ContainerName: helloworld
+        - ContainerName: helloworld-aws
           ContainerPort: 3000
           TargetGroupArn: !ImportValue
             Fn::Join:
