@@ -46,7 +46,7 @@ t.add_resource(TaskDefinition(
                 Ref("AWS::Region"),
                 ".amazonaws.com",
                 "/",
-                ImportValue("helloworld-repo"),
+                ImportValue("helloworld-aws-repo"),
                 ":",
                 Ref("Tag")]),
             Memory=32,
