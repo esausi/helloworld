@@ -51,7 +51,7 @@ t.add_resource(TaskDefinition(
                 Ref("Tag")]),
             Memory=32,
             Cpu=256,
-            Name="helloworld",
+            Name="helloworld-aws",
             PortMappings=[ecs.PortMapping(
                 ContainerPort=3000)]
         )
@@ -86,7 +86,7 @@ t.add_resource(ecs.Service(
     DesiredCount=1,
     TaskDefinition=Ref("task"),
     LoadBalancers=[ecs.LoadBalancer(
-        ContainerName="helloworld",
+        ContainerName="helloworld-aws",
         ContainerPort=3000,
         TargetGroupArn=ImportValue(
             Join(
